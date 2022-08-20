@@ -14,7 +14,7 @@ kiwisolver==1.4.4
 MarkupSafe==2.1.1
 matplotlib==3.5.3
 numpy==1.23.2
-opencv-python==4.6.0.66
+opencv-python-headless
 packaging==21.3
 pandas==1.4.3
 Pillow==9.2.0
