@@ -63,6 +63,10 @@ def faceDetection():
 def test2():
     return("Hello")   
 
+@app.route("/" , methods=['GET' , 'POST'])
+def base():
+    return("Hello")   
+
 
 if __name__ == "__main__" :
     app.run(debug= True)
