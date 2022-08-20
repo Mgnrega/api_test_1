@@ -1,3 +1,4 @@
+conda
 cmake
 catboost==1.0.6
 click==8.1.3
