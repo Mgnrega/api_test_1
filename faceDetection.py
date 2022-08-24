@@ -6,6 +6,9 @@ import json
 from PIL import Image
 import numpy as np
 import io
+import re
+import base64
+from io import BytesIO
 
 
 classifier =pickle.loads(open('output/classifier.pickle' , 'rb').read())
@@ -17,15 +20,12 @@ lb = pickle.loads(open('output/lable_encoder.pickle' , 'rb').read())
 def recognise(img):
 
     persons = []
-    dataBytesIO = io.BytesIO(img.read())
-    temp = Image.open(dataBytesIO)
+    image_data = re.sub('^data:image/.+;base64,', '', img)
+    im = Image.open(BytesIO(base64.b64decode(image_data)))
     # temp.show()
-    image = np.array(temp)
-    rgb = image
-
+    image = np.array(im)
+    # rgb = image
     rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-
-    print(rgb) 
 
     boxes = face_recognition.face_locations(rgb)
     encodings = face_recognition.face_encodings(rgb, boxes)
