@@ -55,9 +55,9 @@ def test():
 def faceDetection():
     persons = []
 
-    if request.method=='POST':
-        result = fd.recognise(request.files['image'])
-        return(result)
+#     if request.method=='POST':
+#         result = fd.recognise(request.files['image'])
+#         return(result)
     if request.method=='GET':
         result = fd.recognise(request.files['image'])
         return(result)    
