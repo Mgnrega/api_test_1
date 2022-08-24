@@ -67,7 +67,7 @@ def test2():
 def base():
     return("Hello")   
 
-@app.route("/im_size", methods=["POST"])
+@app.route("/im_size", methods=['GET' , 'POST'])
 def process_image():
     file = request.files['image']
     # Read the image via file.stream
