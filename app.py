@@ -58,6 +58,9 @@ def faceDetection():
     if request.method=='POST':
         result = fd.recognise(request.files['image'])
         return(result)
+    if request.method=='GET':
+        result = fd.recognise(request.files['image'])
+        return(result)    
     
 @app.route("/test2" , methods=['GET' , 'POST'])
 def test2():
